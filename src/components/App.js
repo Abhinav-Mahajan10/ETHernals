@@ -5,6 +5,7 @@ import Main from './Main'
 import Web3 from 'web3';
 import 'antd/dist/antd.css';
 
+//changes hahaha
 // const fs = require('fs')
 // const pdfparse = require('pdf-parse')
 // const pdffile = fs.readFileSync('https://ipfs.infura.io/ipfs/${image.hash}')
