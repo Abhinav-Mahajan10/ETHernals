@@ -18,7 +18,8 @@ module.exports = {
           `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`// Url to an Ethereum Node
         )
       },
-      gas: 5000000,
+      // gas: 5000000,
+      gas: '0x5208', //gas limit must be 21000.
       gasPrice: 25000000000,
       network_id: 3
     }

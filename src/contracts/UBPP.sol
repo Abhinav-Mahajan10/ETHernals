@@ -3,30 +3,63 @@ pragma experimental ABIEncoderV2;
 
 contract UBPP {
   string public name;
-  uint public imageCount = 0;
-  uint public docCount = 0;
-  uint public mformCount = 0;
-  mapping(uint => Image) public images;
-  mapping(uint => Doc) public docs;
-  mapping(uint => Form) public mforms;
-  string public fullname = 'unanswered';
-  string public mail = 'unanswered';
-  string public phno = 'unanswered';
-  string public gender = 'unanswered';
-  string public date = 'unanswered';
-  string public height = 'unanswered';
-  string public weight = 'unanswered';
-  string public blood = 'unanswered';
-  string public vacc = 'unanswered';
-  string public all = 'unanswered';
-  string public pres = 'unanswered';
-  string public sym = 'unanswered';
-  string public trav = 'unanswered';
-  string public his = 'unanswered';
-  string public ename = 'unanswered';
-  string public eno = 'unanswered';
-  string public ex = 'unanswered';
+  // uint public imageCount = 0;
+  // uint public docCount = 0;
+  // uint public mformCount = 0;
+  // mapping(uint => Image) public images;
+  // mapping(uint => Doc) public docs;
+  // mapping(uint => Form) public mforms;
+  // string public fullname = 'unanswered';
+  // string public mail = 'unanswered';
+  // string public phno = 'unanswered';
+  // string public gender = 'unanswered';
+  // string public date = 'unanswered';
+  // string public height = 'unanswered';
+  // string public weight = 'unanswered';
+  // string public blood = 'unanswered';
+  // string public vacc = 'unanswered';
+  // string public all = 'unanswered';
+  // string public pres = 'unanswered';
+  // string public sym = 'unanswered';
+  // string public trav = 'unanswered';
+  // string public his = 'unanswered';
+  // string public ename = 'unanswered';
+  // string public eno = 'unanswered';
+  // string public ex = 'unanswered';
+  struct User {
+    string username;
+    string password;
+    bool isUserLoggedIn;
+    uint imageCount;
+    uint docCount;
+    uint mformCount;
+    mapping(uint => Image) images;
+    mapping(uint => Doc) docs;
+    mapping(uint => Form) mforms;
+    string fullname;
+    string mail;
+    string phno;
+    string gender;
+    string date;
+    string height;
+    string weight;
+    string blood;
+    string vacc;
+    string all;
+    string pres;
+    string sym;
+    string trav;
+    string his;
+    string ename;
+    string eno;
+    string ex;
+  }
 
+  mapping(address => User) public Users;
+
+  function register(address _address, string memory _name, string memory _password) public returns (bool) {
+    require(Users[_address] != msg.sender);
+  }
 //   struct MedicalForm {
 // 	string fullname;
 // 	string mail;
